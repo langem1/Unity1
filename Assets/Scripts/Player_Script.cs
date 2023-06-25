@@ -2,18 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class Player_Script : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    //Variables
+    [SerializeField]
+    private Rigidbody RB;
     
     [SerializeField]
     Vector3 playerMovementLR;
+    
     [SerializeField]
     Vector3 playerMovementUpDown;
 
@@ -27,9 +24,18 @@ public class PlayerMovement : MonoBehaviour
     KeyCode keyDown;
     [SerializeField]
     KeyCode keyStop;
-
-    int counter;
     
+    private int _items;
+    private int _lives = 5;
+/*    
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+*/
+    // Update is called once per frame
+
     void FixedUpdate()
     {
         // assign keys to movement
@@ -48,17 +54,45 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(keyStop))
             GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
 
-        // TELEPORT - if player falls down, bring him pack to the start position, count the times he had fallen        
+        // TELEPORT - if player falls down, bring him pack to the start position, count the times he had fallen
+        Teleport();
+    }
+
+    public void Teleport()
+    {
         if(transform.position.y < -10)
         {
             transform.position = new Vector3(0f, 2f, 0f);
-            counter += 1;
+            _lives -= 1;
+            Debug.Log("Gefallen " + _lives);
+        }
+    }
+
+    public void Damage()
+    {
+        _lives -= 1;
+        Debug.Log("Angegriffen "+ _lives);
+
+        if(_lives == 0)
+        {
+            Debug.Log("Toooood");
         }
 
-        // End the game when player had fallen down three times
-        //if(counter == 3)
-        //{
-
-        //}
     }
+    
+    private void OnTriggerEnter(Collider other)
+    {
+        // Collect Items
+        if (other.CompareTag("Item"))
+        {
+            Destroy(other.gameObject);
+            _items += 1;
+            Debug.Log("Items " + _items);
+        }
+
+/*        // Get damage
+        this.Damage();
+*/
+    }
+
 }

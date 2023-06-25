@@ -25,7 +25,7 @@ public class Player_Script : MonoBehaviour
     [SerializeField]
     KeyCode keyStop;
     
-    private int _items;
+    public int _items;
     private int _lives = 5;
 /*    
     // Start is called before the first frame update
@@ -89,10 +89,7 @@ public class Player_Script : MonoBehaviour
             _items += 1;
             Debug.Log("Items " + _items);
         }
-
-/*        // Get damage
-        this.Damage();
-*/
+        
     }
-
+    
 }

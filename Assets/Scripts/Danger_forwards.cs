@@ -2,15 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Danger2_Script : MonoBehaviour
+public class Danger_forwards : MonoBehaviour
 {
     [SerializeField]
     private float _dangerSpeed = 3f;
-    
+
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.right * (_dangerSpeed * Time.deltaTime));
+        transform.Translate(Vector3.forward * (_dangerSpeed * Time.deltaTime));
     }
     
     void OnTriggerEnter(Collider other)
@@ -24,7 +24,7 @@ public class Danger2_Script : MonoBehaviour
         {
             _dangerSpeed *= -1;
         }
-        
+
         if (other.CompareTag("Player"))
         {
             _dangerSpeed *= -1;

@@ -4,16 +4,10 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Danger_Script : MonoBehaviour
+public class Danger_Level1 : MonoBehaviour
 {
     [SerializeField]
     private float _dangerSpeed = 3f;
-    
-    // Update is called once per frame
-    void Update()
-    {
-        transform.Translate(Vector3.forward * (_dangerSpeed * Time.deltaTime));
-    }
 
     void OnTriggerEnter(Collider other)
     {

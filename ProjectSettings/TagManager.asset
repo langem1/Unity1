@@ -7,6 +7,8 @@ TagManager:
   - Danger
   - Obstacle
   - Item
+  - Timer
+  - Scene
   layers:
   - Default
   - TransparentFX

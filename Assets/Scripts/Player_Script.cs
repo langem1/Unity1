@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class Player_Script : MonoBehaviour
 {
-    //Variables
+    // Variables
     [SerializeField]
     private Rigidbody RB;
     
@@ -31,23 +31,18 @@ public class Player_Script : MonoBehaviour
     KeyCode keyStop;
     
     public int _items;
-    private int _lives = 5;
-    public float clock = 30f;
-    public float seconds;
-    private bool _alive = true;
-    private bool _win = false;
+    public int _lives = 5;
+    public float _clock = 45f;
+//    private bool _alive = true;
+//    private bool _win = false;
     
     // Start is called before the first frame update
-    
     void Start()
     {
-//        _uiManager.UpdateLives(_lives);
-//        _uiManager.UpdateItems(_items);
-        _uiManager.UpdateTime(clock);
+        _uiManager.UpdateTime(_clock);
     }
     
     // Update is called once per frame
-
     void Update()
     {
         // assign keys to movement
@@ -68,21 +63,11 @@ public class Player_Script : MonoBehaviour
         
         Teleport();
         
-        // Timer
-        if (clock >= 0.0f)
-        {
-            clock -= Time.deltaTime;
-            seconds = Mathf.FloorToInt(clock % 60);
-            _uiManager.UpdateTime(seconds);
-        }
-        else
-        {
-            onPlayerDeath();
-            clock = 0;
-        }
-    }
+        Timer();
 
-    // TELEPORT - if player falls down, bring him pack to the start position, count the times he had fallen
+    }
+    
+    // if player falls down, bring him pack to the start position, count the times he had fallen towards damage
     public void Teleport()
     {
         if(transform.position.y < -10)
@@ -94,11 +79,28 @@ public class Player_Script : MonoBehaviour
             if(_lives == 0)
             {
                 _lives = 0;
-                onPlayerDeath();
+                OnPlayerDeath();
             }
         }
     }
     
+    // countdown in seconds - if clock reaches zero, game over
+    public void Timer()
+    {
+        if (_clock >= 0.0f)
+        {
+            _clock -= Time.deltaTime;
+            float seconds = Mathf.FloorToInt(_clock % 60);
+            _uiManager.UpdateTime(seconds);
+        }
+        else
+        { 
+            OnPlayerDeath();
+            _clock = 0;
+        }
+    }
+    
+    // if player contacts danger elements, losing one life
     public void Damage()
     {
         _lives -= 1;
@@ -107,12 +109,12 @@ public class Player_Script : MonoBehaviour
         if(_lives == 0)
         {
             _lives = 0;
-            onPlayerDeath();
+            OnPlayerDeath();
         }
 
     }
     
-    // Collecting  Items
+    // collecting items
     private void OnTriggerEnter(Collider other)
     {
         
@@ -125,17 +127,16 @@ public class Player_Script : MonoBehaviour
         
     }
 
-    // DEFINE WIN & LOOSING STATE
-    public void onPlayerDeath()
+    // game over
+    public void OnPlayerDeath()
     {
-        _alive = false; 
-        _uiManager.gameOver();
+        _uiManager.GameOver();
     }
     
-    public void onPlayerWin()
+    // winning
+    public void OnPlayerWin()
     {
-        _win = true;
-        _uiManager.win();
+        _uiManager.Winning();
     }
     
 }

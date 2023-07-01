@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraMovement : MonoBehaviour
+public class Camera_Movement : MonoBehaviour
 {
     // Camera should follow the player which is our target here 
     [SerializeField]

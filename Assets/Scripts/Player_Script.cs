@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -33,15 +34,13 @@ public class Player_Script : MonoBehaviour
     public int _items;
     public int _lives = 4;
     public float _clock = 45f;
-//    private bool _alive = true;
-//    private bool _win = false;
-    
+
     // Start is called before the first frame update
     void Start()
     {
         _uiManager.UpdateLives(_lives);
-     //   _uiManager.UpdateItems(_items);
         _uiManager.UpdateTime(_clock);
+        _uiManager.UpdateItems(_items);
     }
     
     // Update is called once per frame
@@ -133,12 +132,14 @@ public class Player_Script : MonoBehaviour
     public void OnPlayerDeath()
     {
         _uiManager.GameOver();
+        Destroy(this.gameObject);
     }
     
     // winning
     public void OnPlayerWin()
     {
         _uiManager.Winning();
+        Destroy(this.gameObject);
     }
     
 }

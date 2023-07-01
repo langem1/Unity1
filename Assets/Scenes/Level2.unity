@@ -564,7 +564,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Lives: \n"
+  m_Text: 'Lives: 5
+
+'
 --- !u!222 &282126130
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1443,8 +1445,8 @@ MonoBehaviour:
   _livestext: {fileID: 282126129}
   _itemstext: {fileID: 682059564}
   _clock: {fileID: 672140210}
-  _statustext: {fileID: 0}
-  _reminder: {fileID: 0}
+  _statustext: {fileID: 356211931}
+  _reminder: {fileID: 750650689}
 --- !u!114 &566407756
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4451,6 +4453,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c5e9f121b34fed4b8399917c71103bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _uiManager: {fileID: 566407755}
 --- !u!54 &1581084057
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5282,7 +5285,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2052594823}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.909837, y: 0.3, z: 0.38976204}
+  m_LocalPosition: {x: 1.909837, y: -0.34, z: 0.38976204}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

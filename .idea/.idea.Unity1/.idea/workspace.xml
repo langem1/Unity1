@@ -6,8 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="e4a9f6b0-eb3f-4557-ae65-5cb7fe7f09c9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level2.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level3.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level3.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Danger_Level1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Danger_Level1.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player_Script.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player_Script.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scene_Change.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Scene_Change.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI_Manager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI_Manager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,6 +95,7 @@
       <workItem from="1687524272941" duration="646000" />
       <workItem from="1687605586072" duration="30391000" />
       <workItem from="1687726582144" duration="401000" />
+      <workItem from="1688212826967" duration="3437000" />
     </task>
     <servers />
   </component>

@@ -55,6 +55,7 @@ public class UI_Manager : MonoBehaviour
     // winning text
     public void Winning()
     {
+        // too long, not working
         _statustext.text = "YAY! You won!";
     }
 }

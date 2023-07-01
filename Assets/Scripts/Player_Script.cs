@@ -31,7 +31,7 @@ public class Player_Script : MonoBehaviour
     KeyCode keyStop;
     
     public int _items;
-    public int _lives = 5;
+    public int _lives = 4;
     public float _clock = 45f;
 //    private bool _alive = true;
 //    private bool _win = false;
@@ -39,6 +39,8 @@ public class Player_Script : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _uiManager.UpdateLives(_lives);
+     //   _uiManager.UpdateItems(_items);
         _uiManager.UpdateTime(_clock);
     }
     

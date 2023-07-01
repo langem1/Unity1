@@ -3,9 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Scene_Change : MonoBehaviour
 {
+    
+    [SerializeField]
+    private UI_Manager _uiManager;
+    
     // if player has collected three items, sent to level 2
     // if player has collected six items, sent to level 3
     // if player has collected nine items, won and game over
@@ -26,12 +31,12 @@ public class Scene_Change : MonoBehaviour
             
             if (other.GetComponent<Player_Script>()._items == 9)
             {
-                GetComponent<Player_Script>().OnPlayerWin();
+                other.GetComponent<Player_Script>().OnPlayerWin();
             }
             
             else
             {
-                GetComponent<UI_Manager>().Reminder();
+                _uiManager.Reminder();
             }
         }
         

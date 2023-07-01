@@ -32,8 +32,8 @@ public class Player_Script : MonoBehaviour
     KeyCode keyStop;
     
     public int _items;
-    public int _lives = 4;
-    public float _clock = 45f;
+    public int _lives = 5;
+    public float _clock = 60f;
 
     // Start is called before the first frame update
     void Start()
@@ -45,6 +45,16 @@ public class Player_Script : MonoBehaviour
     
     // Update is called once per frame
     void Update()
+    {
+        PlayerMovement();
+
+        Teleport();
+        
+        Timer();
+
+    }
+
+    public void PlayerMovement()
     {
         // assign keys to movement
         if (Input.GetKey(keyRight))
@@ -61,11 +71,6 @@ public class Player_Script : MonoBehaviour
 
         if (Input.GetKey(keyStop))
             GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
-        
-        Teleport();
-        
-        Timer();
-
     }
     
     // if player falls down, bring him pack to the start position, count the times he had fallen towards damage

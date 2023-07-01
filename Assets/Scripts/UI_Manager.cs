@@ -31,13 +31,13 @@ public class UI_Manager : MonoBehaviour
     // number of items
     public void UpdateItems(int collector)
     {
-        _itemstext.text = "Items: " + collector;
+        _itemstext.text = "Coins: " + collector;
     }
 
     // reminder to collect three items to get to the next level
     public void Reminder()
     {
-        _reminder.text = "You need 3 items!";
+        _reminder.text = "Collect 3 coins!";
 
     }
     
@@ -56,7 +56,6 @@ public class UI_Manager : MonoBehaviour
     // winning text
     public void Winning()
     {
-        // too long, not working
         _statustext.text = "YAAAY You won!!!";
     }
 }
